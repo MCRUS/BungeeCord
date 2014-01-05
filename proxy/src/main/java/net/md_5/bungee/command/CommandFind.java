@@ -19,16 +19,16 @@ public class CommandFind extends PlayerCommand
     {
         if ( args.length != 1 )
         {
-            sender.sendMessage( ChatColor.RED + "Please follow this command by a user name" );
+            sender.sendMessage( ChatColor.RED + "Пожалуйста, укажите имя игрока" );
         } else
         {
             ProxiedPlayer player = ProxyServer.getInstance().getPlayer( args[0] );
             if ( player == null || player.getServer() == null )
             {
-                sender.sendMessage( ChatColor.RED + "That user is not online" );
+                sender.sendMessage( ChatColor.RED + "Игрок не онлайн" );
             } else
             {
-                sender.sendMessage( ChatColor.BLUE + args[0] + " is online at " + player.getServer().getInfo().getName() );
+                sender.sendMessage( ChatColor.BLUE + args[0] + " онлайн на сервере " + player.getServer().getInfo().getName() );
             }
         }
     }

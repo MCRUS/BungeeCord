@@ -19,16 +19,16 @@ public class CommandIP extends Command
     {
         if ( args.length < 1 )
         {
-            sender.sendMessage( ChatColor.RED + "Please follow this command by a user name" );
+            sender.sendMessage( ChatColor.RED + "Пожалуйста, укажите имя игрока" );
             return;
         }
         ProxiedPlayer user = ProxyServer.getInstance().getPlayer( args[0] );
         if ( user == null )
         {
-            sender.sendMessage( ChatColor.RED + "That user is not online" );
+            sender.sendMessage( ChatColor.RED + "Данный игрок не онлайн" );
         } else
         {
-            sender.sendMessage( ChatColor.BLUE + "IP of " + args[0] + " is " + user.getAddress() );
+            sender.sendMessage( ChatColor.BLUE + "IP игрока " + args[0] + " " + user.getAddress() );
         }
     }
 }

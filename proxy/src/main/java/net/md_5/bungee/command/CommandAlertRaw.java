@@ -23,7 +23,7 @@ public class CommandAlertRaw extends Command
     {
         if ( args.length == 0 )
         {
-            sender.sendMessage( ChatColor.RED + "You must supply a message." );
+            sender.sendMessage( ChatColor.RED + "Вы должны указать сообщение." );
         } else
         {
             String message = Joiner.on( ' ' ).join( args );
@@ -41,14 +41,14 @@ public class CommandAlertRaw extends Command
                 if ( sender instanceof ProxiedPlayer )
                 {
                     sender.sendMessage(
-                            new ComponentBuilder( "An error occurred while parsing your message. (Hover for details)" ).
+                            new ComponentBuilder( "Ошибка во время обработки сообщения. (Наведите для подробной информации.)" ).
                             color( ChatColor.RED ).underlined( true ).
                             event( new HoverEvent( HoverEvent.Action.SHOW_TEXT,
                                             new ComponentBuilder( error.getMessage() ).color( ChatColor.RED ).create() ) ).
                             create() );
                 } else
                 {
-                    sender.sendMessage( new ComponentBuilder( "An error occurred while parsing your message: " ).color( ChatColor.RED ).append( error.getMessage() ).create() );
+                    sender.sendMessage( new ComponentBuilder( "Ошибка во время обработки сообщения: " ).color( ChatColor.RED ).append( error.getMessage() ).create() );
                 }
             }
         }

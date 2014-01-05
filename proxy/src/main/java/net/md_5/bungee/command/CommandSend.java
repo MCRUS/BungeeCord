@@ -20,7 +20,7 @@ public class CommandSend extends Command
     {
         if ( args.length != 2 )
         {
-            sender.sendMessage( ChatColor.RED + "Not enough arguments, usage: /send <player|all|current> <target>" );
+            sender.sendMessage( ChatColor.RED + "Недостаточно параметров. Использование: /send <player|all|current> <цель>" );
             return;
         }
         ServerInfo target = ProxyServer.getInstance().getServerInfo( args[1] );
@@ -40,7 +40,7 @@ public class CommandSend extends Command
         {
             if ( !( sender instanceof ProxiedPlayer ) )
             {
-                sender.sendMessage( ChatColor.RED + "Only in game players can use this command" );
+                sender.sendMessage( ChatColor.RED + "Только игроки онлайн может использовать данную команду" );
                 return;
             }
             ProxiedPlayer player = (ProxiedPlayer) sender;
@@ -53,12 +53,12 @@ public class CommandSend extends Command
             ProxiedPlayer player = ProxyServer.getInstance().getPlayer( args[0] );
             if ( player == null )
             {
-                sender.sendMessage( ChatColor.RED + "That player is not online" );
+                sender.sendMessage( ChatColor.RED + "Данный игрок не онлайн" );
                 return;
             }
             summon( player, target, sender );
         }
-        sender.sendMessage( ChatColor.GREEN + "Successfully summoned player(s)" );
+        sender.sendMessage( ChatColor.GREEN + "Указанный игрок успешно перемещен к Вам." );
     }
 
     private void summon(ProxiedPlayer player, ServerInfo target, CommandSender sender)
@@ -66,7 +66,7 @@ public class CommandSend extends Command
         if ( player.getServer() != null && !player.getServer().getInfo().equals( target ) )
         {
             player.connect( target );
-            player.sendMessage( ChatColor.GOLD + "Summoned to " + target.getName() + " by " + sender.getName() );
+            player.sendMessage( ChatColor.GOLD + "Вы были перемещены к " + target.getName() + " администратором " + sender.getName() );
         }
     }
 }

@@ -50,7 +50,7 @@ public class ConsoleCommandSender implements CommandSender
     @Override
     public String getName()
     {
-        return "CONSOLE";
+        return "КОНСОЛЬ";
     }
 
     @Override
