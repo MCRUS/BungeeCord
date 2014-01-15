@@ -28,7 +28,7 @@ public class BungeeLogger extends Logger
             addHandler( handler );
         } catch ( IOException ex )
         {
-            System.err.println( "Could not register logger!" );
+            System.err.println( "Не удалось зарегистрировать этот логгер!" );
             ex.printStackTrace();
         }
         dispatcher.start();
